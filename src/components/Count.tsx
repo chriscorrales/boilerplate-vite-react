@@ -1,9 +1,17 @@
-import { useState } from 'react';
+import { FC, memo } from 'react';
 
-function App() {
-  const [count, setCount] = useState(0);
+import { useCounter } from '../hooks/useCounter';
 
-  return <button onClick={() => setCount(count => count + 1)}>count is {count}</button>;
-}
+const Counter: FC = () => {
+  const { count, increment, decrement } = useCounter();
 
-export default App;
+  return (
+    <>
+      <span>Count is {count}</span>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button>
+    </>
+  );
+};
+
+export default memo(Counter);
