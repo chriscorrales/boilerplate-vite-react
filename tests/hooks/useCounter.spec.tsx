@@ -1,7 +1,6 @@
+import { useCounter } from '@Hooks/useCounter';
 import { act, renderHook } from '@testing-library/react-hooks';
 import { describe, expect, it } from 'vitest';
-
-import { useCounter } from '../../src/hooks/useCounter';
 
 describe('useCounter hook', () => {
   it('should increment the count', () => {

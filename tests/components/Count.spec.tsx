@@ -1,8 +1,6 @@
-import React from 'react';
+import Count from '@Components/Counter';
+import { render, screen, userEvent } from '@Utils/testUtils';
 import { describe, expect, it } from 'vitest';
-
-import Count from '../../src/components/Counter';
-import { render, screen, userEvent } from '../../src/utils/testUtils';
 
 describe('Sample App vitest', () => {
   it('should increment the count when icon (+) clicked', async () => {
