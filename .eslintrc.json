@@ -10,6 +10,7 @@
       "version": "detect"
     }
   },
+  "ignorePatterns": ["/dist", "/node_modules", "/coverage"],
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",

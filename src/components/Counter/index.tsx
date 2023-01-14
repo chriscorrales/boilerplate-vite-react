@@ -1,6 +1,6 @@
+import { useCounter } from '@Hooks/useCounter';
 import { FC, memo } from 'react';
 
-import { useCounter } from '../../hooks/useCounter';
 import styles from './counter.module.css';
 
 const Counter: FC = () => {
