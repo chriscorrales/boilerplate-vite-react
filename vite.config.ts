@@ -1,14 +1,14 @@
 /// <reference types="vitest" />
 import path from 'path';
 
-import react from '@vitejs/plugin-react';
+import react from '@vitejs/plugin-react-swc';
 import { defineConfig } from 'vite';
 
 function isExternal(id: string) {
   return !id.startsWith('.') && !path.isAbsolute(id) && !id.startsWith('@');
 }
 
-const alias = {
+export const alias = {
   '@': path.resolve(__dirname, './src'),
   '@Components': path.resolve(__dirname, './src/components/'),
   '@Hooks': path.resolve(__dirname, './src/hooks'),
@@ -33,18 +33,6 @@ export default defineConfig({
     },
     rollupOptions: {
       external: isExternal
-    }
-  },
-  test: {
-    globals: true,
-    environment: 'jsdom',
-    setupFiles: './tests/setup.ts',
-    deps: {
-      registerNodeLoader: true
-    },
-    alias: alias,
-    coverage: {
-      reporter: ['text', 'json', 'html']
     }
   }
 });
