@@ -1,45 +1,44 @@
 {
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "node",
+
+    "target": "ESNext",
     "allowJs": false,
     "allowSyntheticDefaultImports": true,
-    "baseUrl": ".",
+    "allowUnreachableCode": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "esModuleInterop": false,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
-    "module": "ESNext",
-    "moduleResolution": "Node",
+    "importHelpers": false,
     "noEmit": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
     "strict": true,
-    "target": "ESNext",
+    "strictNullChecks": false,
     "useDefineForClassFields": true,
-    "types": [
-      "vite/client"
-    ],
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "rootDir": "./",
     "lib": [
       "DOM",
       "DOM.Iterable",
       "ESNext"
     ],
-    "rootDirs": ["src", "tests"],
     "paths": {
-      "@/*": ["src/*", "tests/*"],
-      "@Tests/*": ["tests/*"],
-      "@Components/*": ["src/components/*"],
-      "@Hooks/*": ["src/hooks/*"],
-      "@Store/*": ["src/store/*"],
-      "@Utils": ["src/utils/*"]
+      "@/*": ["./src/*"],
+      "@Components/*": ["./src/components/*"],
+      "@Services/*": ["./src/services/*"],
+      "@Shared/*": ["./src/shared/*"],
+      "@Store/*": ["./src/store/*"],
+      "@Hooks/*": ["./src/hooks/*"],
+      "@Utils/*": ["./src/utils/*"],
     }
   },
-  "include": [
-    "src/*"
-  ],
-  "exclude": ["/node_modules", "/dist", "/coverage"],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+  "exclude": ["/node_modules", "/dist", "/tests", "**/*.spec.tsx"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+
 }

@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import path from 'path';
 
 import react from '@vitejs/plugin-react-swc';
@@ -11,14 +10,16 @@ function isExternal(id: string) {
 export const alias = {
   '@': path.resolve(__dirname, './src'),
   '@Components': path.resolve(__dirname, './src/components/'),
-  '@Hooks': path.resolve(__dirname, './src/hooks'),
+  '@Services': path.resolve(__dirname, './src/services/'),
+  '@Shared': path.resolve(__dirname, './src/shared/'),
   '@Store': path.resolve(__dirname, './src/store'),
+  '@Hooks': path.resolve(__dirname, './src/hooks'),
   '@Utils': path.resolve(__dirname, './src/utils')
 };
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react({ tsDecorators: true })],
   resolve: {
     extensions: ['.ts', '.tsx', '.spec.tsx'],
     alias: alias

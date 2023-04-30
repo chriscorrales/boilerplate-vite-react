@@ -5,8 +5,7 @@ import { defineConfig } from 'vitest/config';
 
 import viteConfig, { alias } from './vite.config';
 
-// https://vitejs.dev/config/
-
+// https://vitest.dev/config/
 export default mergeConfig(
   viteConfig,
   defineConfig({
